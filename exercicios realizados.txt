@@ -1,0 +1,95 @@
+1.
+inicio:
+
+    mov eax, 8                ; Coloca 8 em EAX (inicia o número de comparação)
+
+condicaoum:
+    mov ebx, 10               ; Coloca 10 em EBX
+    cmp eax, ebx              ; Compara o valor de EAX (8) com o valor de EBX (10)
+    jnz condicaodois          ; Se EAX não for igual a EBX (8 != 10), pula para "condicaodois"
+    mov edi, 1                ; Se EAX for igual a 10, coloca 1 em EDI
+    jmp fim                   ; Pula para o final do programa, terminando a execução
+
+condicaodois:
+    mov ebx, 9                ; Coloca 9 em EBX
+    cmp eax, ebx              ; Compara o valor de EAX (8) com o valor de EBX (9)
+    jnz condicaotres          ; Se EAX não for igual a EBX (8 != 9), pula para "condicaotres"
+    mov edi, 2                ; Se EAX for igual a 9, coloca 2 em EDI
+    jmp fim                   ; Pula para o final do programa, terminando a execução
+
+condicaotres:
+    mov ebx, 8                ; Coloca 8 em EBX
+    cmp eax, ebx              ; Compara o valor de EAX (8) com o valor de EBX (8)
+    jnz senao                 ; Se EAX não for igual a EBX (não entra aqui porque 8 == 8)
+    mov edi, 3                ; Se EAX for igual a 8, coloca 3 em EDI
+    jmp fim                   ; Pula para o final do programa, terminando a execução
+
+senao:
+    mov edi, 4                ; Se nenhuma das condições anteriores for verdadeira, coloca 4 em EDI
+
+fim:
+    ; O programa termina aqui.
+
+
+2.
+
+inicio:
+    mov eax, 1991     ; Carrega 1991 em eax
+    mov edx, 2025      ; Carrega 2025 em edx
+    sub edx, eax       ; Subtrai eax (1991) de edx (2025), resultado em edx
+
+verificacoes:
+    mov eax, 3        ; Carrega 3 em eax
+    mov ebx, 3         ; Carrega 3 em ebx
+    cmp ebx, eax       ; Compara ebx com eax
+    jle condicaodois   ; Se ebx <= eax, vai para condicaodois
+
+    dec edx            ; Decrementa edx
+    jmp fim            ; Salta para fim
+
+condicaodois:
+    mov eax, 3         ; Carrega 3 em eax
+    cmp eax, ebx       ; Compara eax com ebx
+    jnz fim            ; Se eax != ebx, vai para fim
+
+    mov eax, 6        ; Carrega 6 em eax
+    mov ebx, 6         ; Carrega 6 em ebx
+    cmp eax, ebx       ; Compara eax com ebx
+    jle fim            ; Se eax <= ebx, vai para fim
+
+    dec edx            ; Decrementa edx
+
+fim:
+    ; Fim do código
+
+4.
+
+inicio:
+    mov eax, 5      ; Base (5)
+    mov ebx, 3      ; Expoente (3)
+    mov edi, 1      ; Inicializa resultado com 1
+
+verificacao:
+    mul edi         ; Multiplica resultado atual pelo número base
+    mov edi, eax    ; Armazena o resultado da multiplicação em EDI
+    dec ebx         ; Decrementa o expoente
+    jnz verificacao ; Se EBX != 0, continua multiplicando
+
+fim:
+    ; Resultado final em EDI
+    ; Aqui poderia haver uma saída ou retorno
+
+
+
+8.
+inicio:
+    mov EAX, 225     ; Número a ser verificado (substitua pelo número desejado)
+    mov ECX, 2       ; Divisor = 2
+    mov EDX, 0       ; Limpa EDX antes da divisão (inicializa como 0)
+    div ECX          ; EAX = EAX / 2, EDX = resto da divisão (0 para par, 1 para ímpar)
+
+    ; O valor de EDX agora é 0 (par) ou 1 (ímpar)
+    mov EDI, EDX     ; Move o valor de EDX para EDI
+
+fim:
+    ; Aqui terminaria o programa ou seguiria para outras operações
